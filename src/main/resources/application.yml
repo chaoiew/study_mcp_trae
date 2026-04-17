@@ -1,0 +1,26 @@
+# Spring Boot 应用配置
+spring:
+  application:
+    # 应用名称
+    name: mcp-food-ordering-server
+
+# Spring AI MCP 配置
+spring:
+  ai:
+    mcp:
+      server:
+        # 启用 MCP Server 自动配置
+        enabled: true
+
+# 日志配置
+logging:
+  level:
+    # 配置 MCP 相关日志级别为 DEBUG，方便调试
+    org.springframework.ai.mcp: DEBUG
+    # 配置本项目包的日志级别
+    com.example.mcp.food: DEBUG
+
+# 服务器配置
+server:
+  # 应用端口（虽然我们主要用 STDIO 传输，但 Web 端口还是可以保留用于健康检查等）
+  port: 8080
